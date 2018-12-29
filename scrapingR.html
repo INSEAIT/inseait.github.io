@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Web scraping using R</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">INSEA IT Blog </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://inseait.com/">inseait.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/article_image.jpeg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Web scraping using R -Part 1-</h1>
+              
+              <span class="meta">Posted by
+                <a href="https://www.linkedin.com/in/fouad-kouzmane-b8a00a162/">Fouad Kouzmane</a>
+                on july 20, 2018</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- title class : <h2 class="section-heading">How does a computer virus work ? </h2>    <blockquote class="blockquote">Could be sharing more technics to detect virus on your machine if your antivirus fails to but that needs a technical background and some prerequisites in operating systems architectures and computer networking </blockquote> -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+              <h2 class="section-heading">What is web scraping ?</h2>
+            <p>
+                    Web scraping is a commonly used method in data science field
+                    which allow the utilization of the data available on websites,
+                    so we could define it as an accurate and reliable extraction of data .
+            </p>
+               <h2 class="section-heading">Tools we will need</h2>
+               <p>
+                    For the sake of simplicity, we will be using the R language which is
+                    mostly utilized in data analysis and data visualization. 
+                    We will be using Rstudio as an editor for our scraping script 
+               </p>
+               <a href="https://www.rstudio.com/products/rstudio/download/" style ="color :#0084fd">Download Rstudio</a>
+            <p>
+                <img src="img/RstudioWorkspace.jpg" width="800"
+                height="450" alt="Rstudio work station">
+            </p>
+            <h2 class="section-heading">Step 1 : installing rvest</h2>
+            <p>
+              When scraping data using R we will need the <strong>rvest</strong>
+              library which is a package that will simplify data harvesting 
+              with a set of predefined functions.
+            </p>
+            <p>
+              <img src="img/installrvest.png" width="800"
+              height="70" alt="installing the rvest package">
+            </p>
+            <p>In the console section we will execute this commande line</p>
+            <code ><pre style="color:#fb6969">
+                    install.packages('rvest')
+            </pre></code> 
+             <h2 class="section-heading">Step 2 : reading the webpage</h2> 
+             <p>
+               Now, we need to setup our script by creating a new file,
+               then we will upload the Rvest package, after that we are going to read
+               the webpage we want to scrap, in this tutorial we will be using this <a href="https://www.imdb.com/search/title?year=2017&title_type=feature&page=1&ref_=adv_prv">webpage</a>  <br>
+               from the famous imdb website .
+              </p> 
+               <pre style="color:#49bbe7"><code>
+library('rvest') 
+url  <-  'https://www.imdb.com/search/title?year=2017&title_type=feature&page=1&ref_=adv_prv'
+webpage <- read_html(url) 
+                </code> </pre>
+              
+               <p>Now the webpage variable contains the html source code .</p>
+               <h2 class="section-heading">step 3 : choosing the selectors</h2> 
+             <p>
+               The next step is extracting the wanted informations, lets say for example we want 
+               to extract the name of the 50 movies in this webpage and to achieve that we will 
+               use the html_nodes function to select nodes from an html document using XPath or css selectors
+               (be careful choosing the right css selector) and the html_text function in order to harvest
+               the text of the extracted node 
+
+                The html code of the movie title is :
+              </p> 
+                <p>
+                  <img src="img/html code.png" width="800"
+                  height="500" alt="html code source">
+                  <p>as we can see the associated css selector is <em>a</em> nested in the <em>lister-item-header</em> <br>
+                     class So we will be using that in the html-nodes function than extract the html text </p>
+                </p>
+                <pre style="color:#49bbe7"><code>title_html <- html_nodes(webpage,'.lister-item-header a')<br>title <- html_text(title_html)</code></pre>
+                   <p>If we repeat the same thing for the meta score, the runtime and the rating :</p>
+                   <pre style="color:#49bbe7"><code>
+title_html <- html_nodes(webpage,'.lister-item-header a') 
+title <- html_text(title_html)
+                      
+rating_html <- html_nodes(webpage,'.lister-item.mode-advanced strong')
+rating <- html_text(rating_html)
+                      
+metascore_html <- html_nodes(webpage,'.metascore') 
+metascore <- html_text(metascore_html)
+                      
+runtime_html <- html_nodes(webpage,'span.runtime')
+runtime <- html_text(runtime_html)
+                      
+                   </code></pre>
+                   <h2 class="section-heading">step 4 : structuring the scraped data</h2>
+                   <p>
+                     After collecting the data we need and putting it into different variables
+                     the only thing that is left is organizing our data into a more appealing format
+                     and that is by defining a data frame 
+                    </p>
+                     <pre><code>
+                        data.frame (Title = title, Rating = rating , Runtime = runtime ,Metascore = metascore)
+                     </code></pre>
+                     <p> Finally we will be getting a structured data :  </p>
+                     <p><img src="img/data_frame.png" width="800"
+                      height="700" alt="data structured in a data frame"></p>
+                     <p>
+                       <span style="color:#e75949">Disclaimer :</span> scraping websites may sometimes not be legal because of the terms of service ,
+                       so to avoid any problems you need to check the rules set by the website owners 
+                      </p>
+
+                       <a href="https://varvy.com/robottxt.html" style="color:#e75949">How to check if a website is legally harvestable</a>
+
+              </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://inseait.com/">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="www.facebook.com/insea.it">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; inseait.com 2018</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
