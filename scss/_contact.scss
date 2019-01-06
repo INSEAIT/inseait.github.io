@@ -1,60 +1,49 @@
-// Styling for the contact page
-.floating-label-form-group {
-  font-size: 14px;
-  position: relative;
-  margin-bottom: 0;
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid $gray-300;
-  input,
-  textarea {
-    font-size: 1.5em;
-    position: relative;
-    z-index: 1;
-    padding: 0;
-    resize: none;
-    border: none;
-    border-radius: 0;
-    background: none;
-    box-shadow: none !important;
-    @include serif-font;
-    &::-webkit-input-placeholder {
-      color: $gray-600;
-      @include serif-font;
+// Styling for the contact section
+section#contact {
+  background-color: $gray-900;
+  background-image: url('../img/map-image.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  .section-heading {
+    color: $white;
+  }
+  .form-group {
+    margin-bottom: 25px;
+    input,
+    textarea {
+      padding: 20px;
+    }
+    input.form-control {
+      height: auto;
+    }
+    textarea.form-control {
+      height: 248px;
     }
   }
-  label {
-    font-size: 0.85em;
-    line-height: 1.764705882em;
-    position: relative;
-    z-index: 0;
-    top: 2em;
-    display: block;
-    margin: 0;
-    -webkit-transition: top 0.3s ease, opacity 0.3s ease;
-    -moz-transition: top 0.3s ease, opacity 0.3s ease;
-    -ms-transition: top 0.3s ease, opacity 0.3s ease;
-    transition: top 0.3s ease, opacity 0.3s ease;
-    vertical-align: middle;
-    vertical-align: baseline;
-    opacity: 0;
+  .form-control:focus {
+    border-color: $primary;
+    box-shadow: none;
   }
-  .help-block {
-    margin: 15px 0;
+  ::-webkit-input-placeholder {
+    font-weight: 700;
+    color: $gray-400;
+    @include heading-font;
   }
-}
-
-.floating-label-form-group-with-value {
-  label {
-    top: 0;
-    opacity: 1;
+  :-moz-placeholder {
+    font-weight: 700;
+    color: $gray-400;
+    /* Firefox 18- */
+    @include heading-font;
   }
-}
-
-.floating-label-form-group-with-focus {
-  label {
-    color: $primary;
+  ::-moz-placeholder {
+    font-weight: 700;
+    color: $gray-400;
+    /* Firefox 19+ */
+    @include heading-font;
   }
-}
-form .form-group:first-child .floating-label-form-group {
-  border-top: 1px solid $gray-300;
+  :-ms-input-placeholder {
+    font-weight: 700;
+    color: $gray-400;
+    @include heading-font;
+  }
 }

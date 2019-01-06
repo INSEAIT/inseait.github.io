@@ -1,81 +1,49 @@
 // Styling for the masthead
 header.masthead {
-  // TIP: Background images are set within the HTML using inline CSS!
-  margin-bottom: 50px;
-  background: no-repeat center center;
-  background-color: $gray-600;
+  text-align: center;
+  color: white;
+  background-image: url('../img/header-bg.jpg');
+  background-repeat: no-repeat;
   background-attachment: scroll;
-  position: relative;
+  background-position: center center;
   @include background-cover;
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: $gray-900;
-    opacity: 0.5;
-  }
-  .page-heading,
-  .post-heading,
-  .site-heading {
-    padding: 200px 0 150px;
-    color: white;
-    @media only screen and (min-width: 768px) {
-      padding: 200px 0;
-    }
-  }
-  .page-heading,
-  .site-heading {
-    text-align: center;
-    h1 {
-      font-size: 50px;
-      margin-top: 0;
-    }
-    .subheading {
-      font-size: 24px;
-      font-weight: 300;
-      line-height: 1.1;
-      display: block;
-      margin: 10px 0 0;
-      @include sans-serif-font;
-    }
-    @media only screen and (min-width: 768px) {
-      h1 {
-        font-size: 80px;
-      }
-    }
-  }
-  .post-heading {
-    h1 {
-      font-size: 35px;
-    }
-    .meta,
-    .subheading {
-      line-height: 1.1;
-      display: block;
-    }
-    .subheading {
-      font-size: 24px;
-      font-weight: 600;
-      margin: 10px 0 30px;
-      @include sans-serif-font;
-    }
-    .meta {
-      font-size: 20px;
-      font-weight: 300;
+  .intro-text {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    .intro-lead-in {
+      font-size: 22px;
       font-style: italic;
+      line-height: 22px;
+      margin-bottom: 25px;
       @include serif-font;
-      a {
-        color: $white;
-      }
     }
-    @media only screen and (min-width: 768px) {
-      h1 {
-        font-size: 55px;
+    .intro-heading {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 50px;
+      margin-bottom: 25px;
+      @include heading-font;
+    }
+  }
+}
+@media(min-width:768px) {
+  header.masthead {
+    .intro-text {
+      padding-top: 300px;
+      padding-bottom: 200px;
+      .intro-lead-in {
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+        margin-bottom: 25px;
+        @include serif-font;
       }
-      .subheading {
-        font-size: 30px;
+      .intro-heading {
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 75px;
+        margin-bottom: 50px;
+        @include heading-font;
       }
     }
   }
