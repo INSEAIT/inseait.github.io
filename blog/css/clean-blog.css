@@ -141,7 +141,16 @@ img::-moz-selection {
   text-transform: uppercase;
   color: #343a40;
 }
-
+.side-box, .sidebar-search {
+  padding: 30px;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px; }
+  .side-box .heading, .sidebar-search .heading {
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-family: "Mukta Mahee", arial, sans-serif; }
 #mainNav .navbar-nav > li.nav-item > a {
   font-size: 12px;
   font-weight: 800;
