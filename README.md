@@ -1,11 +1,8 @@
-# inseait.github.io
 
-#A propos de INSEA IT
-Rebaptisé club “INSEA IT” à la place de club Informatique en 2016, le club a totalement muté après avoir été pendant 
-plusieurs années un club de filière pour s’ouvrir sur toutes les filières de l’Institut car face aux nouveaux défis du
-monde des Nouvelles technologies de l’information et aussi ceux du marché de l’emploi, le club INSEA IT 
-( IT pour Information Technology) se veut par excellence etre un espace d’apprentissage d’échange et de partage dans 
-les domaines les plus divers de l’informatique. Il est ainsi l’un des clubs les plus préstigieux de l’Institut National 
-de Statistique et d’Economie Appliquée, INSEA IT est composé de membres compétents, qualifiés et dévoués pour offrir un 
-cadre approprié pour mieux appréhender les divers champs Informatiques.
-the INSEA IT bwebsite
+# About
+Insea IT is a community of students aiming to share knowledge and information about the new technologies in the world, through trainings, conferences and competitions.
+
+This repository contains the code for the official website for the team, in the way to becoming a platform of learning between people, through peer learning, where each person shares his own knowledge and adds his contribution.
+### Contributions
+
+For all interested in contributing in the development of the platform, fork the repository and your contributions would be welcome.
