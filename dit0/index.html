@@ -1,33 +1,82 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>level 0</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="dit0.css">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blueprint: Page Stack Navigation</title>
+	<meta name="description" content="Blueprint: A basic template for a page stack navigation effect" />
+	<meta name="keywords" content="blueprint, template, html, css, page stack, 3d, perspective, navigation, menu" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<script src="js/modernizr-custom.js"></script>
+</head>
 
-    <div class="container">
-        <h2 id="msg">Beyond it, beyond walls. An unveiled trueness within the treasured past.</h2>
-       
-    </div>
-    
-      
-      
-      
-    
-    <footer>&copy 2019 - <a href="www.inseait.com">INSEA IT</a></footer>
-  </body>
+<body>
+	<!-- navigation -->
+	<nav class="pages-nav">
+		<div class="pages-nav__item"><a class="link link--page" href="https://inseait.com/">www.inseait.com</a></div>
+		<div class="pages-nav__item"><a class="link link--page" href="https://inseait.com/blog/">Our Blog</a></div>
+		<div class="pages-nav__item"><a class="link link--page" href="https://medium.com/insea-it-blog">Medium blog</a></div>
+		<div class="pages-nav__item pages-nav__item--social">
+			<a class="link link--social link--faded" href="https://www.instagram.com/club.insea.it/"><i class="fa fa-instagram"></i><span class="text-hidden">Instagram</span></a>
+			<a class="link link--social link--faded" href="https://www.linkedin.com/company/insea-it/"><i class="fa fa-linkedin"></i><span class="text-hidden">LinkedIn</span></a>
+			<a class="link link--social link--faded" href="https://www.facebook.com/insea.it"><i class="fa fa-facebook"></i><span class="text-hidden">Facebook</span></a>
+			<a class="link link--social link--faded" href="https://www.youtube.com/watch?v=TozKGSAoiVc"><i class="fa fa-youtube-play"></i><span class="text-hidden">YouTube</span></a>
+		</div>
+	</nav>
+	<!-- /navigation-->
+	<!-- pages stack -->
+	<div class="pages-stack">
+		<!-- page -->
+		<div class="page" id="page-home">
+
+				<head>
+						<title>level 0</title>
+						<!-- Required meta tags -->
+						<meta charset="utf-8">
+						<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+					
+						<!-- Bootstrap CSS -->
+						<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+					  </head>
+					  <body >
+						<div id="fb-root"></div>
+						<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
+						<!-- Optional JavaScript -->
+						<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+						<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+						<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+						<link rel="stylesheet" type="text/css" href="dit0.css">
+						
+						<div class="container">
+								<br><br>
+								<br>
+								<br>
+								<br>
+							</div>
+						<div class="container">
+							<h2 id="msg">Beyond it, beyond walls. An unveiled trueness within the treasured past.</h2> 
+						</div>
+					   
+						<footer>
+						  <div class="fb-like" data-href="https://www.facebook.com/insea.it/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+						  <br>
+						  &copy 2019 - <a href="https://inseait.com/">INSEA IT</a>
+						</footer>
+
+		</div>
+		
+	</div>
+	<!-- /pages-stack -->
+	<button class="menu-button"><span>Menu</span></button>
+	<script src="js/classie.js"></script>
+	<script src="js/main.js"></script>
+</body>
 
 </html>
