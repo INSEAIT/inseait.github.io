@@ -1,7 +1,16 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url("fonts/AlbertText-Bold.ttf") format('truetype');
+    src : url("fonts/AlbertTextBold.otf");
+}
+@import url(//fonts.google.com/specimen/Special+Elite);
+.text{
+    font-family: myFirstFont;
+}
 h2{
     margin-top:120px;
     margin-bottom:60px;
-    font-family:"Albert Text";
+    font-family: myFirstFont;
     text-align:center;
     color:#3493eb;
     font-size: 50px;
@@ -26,6 +35,12 @@ body{
     
 
 }
+
+.container{
+    font-family: myFirstFont;
+}
+
+
 iframe{
     display: block;
     margin: 0 auto;
