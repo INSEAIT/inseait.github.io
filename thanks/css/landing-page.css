@@ -18,6 +18,12 @@ h6 {
   font-weight: 700;
 }
 
+
+.image-card{
+  height: auto;
+  width: 100px;
+ 
+}
 header.masthead {
   position: relative;
   background-color: #343a40;
