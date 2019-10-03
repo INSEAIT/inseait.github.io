@@ -1,0 +1,43 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url("fonts/AlbertText-Bold.ttf") format('truetype');
+    src : url("fonts/AlbertTextBold.otf");
+}
+@import url(//fonts.google.com/specimen/Special+Elite);
+.text{
+    font-family: myFirstFont;
+}
+h2{
+    
+    margin-bottom:60px;
+    font-family: myFirstFont;
+    text-align:center;
+    color:#3493eb;
+    font-size: 50px;
+    text-shadow: 2px 4px 30px #3493eb;
+}
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding-bottom:12px;
+    width: 100%;
+    font-size: 13px;
+    color: white;
+    text-align: center;
+}
+body{
+    height: 100%;
+    background-color: black;
+    
+}
+
+.container{
+    font-family: myFirstFont;
+}
+
+
+iframe{
+    display: block;
+    margin: 0 auto;
+}
